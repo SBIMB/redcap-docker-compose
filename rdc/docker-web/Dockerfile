@@ -11,6 +11,7 @@ RUN apt-get update -qq && \
     msmtp-mta \
     ca-certificates \
     git \
+    nano \
     ssh \
     wget \
     libpng-dev \
