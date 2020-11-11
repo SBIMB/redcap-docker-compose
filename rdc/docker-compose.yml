@@ -80,6 +80,16 @@ services:
       MH_UI_WEB_PATH: mailhog
     networks:
       - redcap_network
+      
+  smtp-relay:
+    container_name: ${DOCKER_PREFIX}_smtp-relay
+    image: turgon37/smtp-relay:latest
+    restart: always
+    env_file: .env
+    depends_on:
+      - web
+    ports:
+      - "${SMTP_RELAY_PORT}:25"
 
   # THIS CONTAINER IS OPTIONAL IF YOU WANT TO HAVE PHPMYADMIN - OTHERWISE COMMENT IT OUT
   phpmyadmin:
