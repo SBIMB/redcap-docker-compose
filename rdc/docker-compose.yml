@@ -89,7 +89,7 @@ services:
     depends_on:
       - web
     ports:
-      - "${SMTP_RELAY_PORT}:25"
+      - "${RELAY_PORT}:25"
 
   # THIS CONTAINER IS OPTIONAL IF YOU WANT TO HAVE PHPMYADMIN - OTHERWISE COMMENT IT OUT
   phpmyadmin:
